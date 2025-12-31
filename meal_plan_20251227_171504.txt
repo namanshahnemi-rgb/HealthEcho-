@@ -1,0 +1,61 @@
+================================================================================
+NUTRIHELP - PERSONALIZED MEAL PLAN
+================================================================================
+Generated: 2025-12-27 17:15:04
+================================================================================
+
+USER PROFILE:
+--------------------------------------------------------------------------------
+Goal                : weight lose
+Sport               : running
+Level               : beginner
+Diet                : veg
+Condition           : diabetes
+Allergies           : no
+
+================================================================================
+MEAL PLAN:
+================================================================================
+
+As an expert nutritionist and meal planner, I've crafted a comprehensive 7-day vegetarian meal plan specifically designed for your goals: weight loss, managing high-severity diabetes, and supporting your beginner running journey. This plan prioritizes blood sugar stability, sustained energy, and nutrient density, while adhering strictly to your vegetarian preference and avoiding all forbidden foods.
+
+***
+
+## 📅 7-DAY PERSONALIZED MEAL PLAN
+
+**Important Note on Provided Recipes:** The "Tomato Pesto Chicken Pasta" and "Quinoa Salmon Bowl" recipes are not vegetarian and therefore cannot be incorporated into your plan. The "Vegetable Curry" with 6 calories and 0.4g protein is nutritionally insufficient; I have created a realistic, diabetes-friendly vegetarian curry recipe for you.
+
+Here's your actionable meal plan, focusing on whole grains, leafy greens, and lean plant-based proteins.
+
+---
+
+### **Day 1**
+
+*   **Breakfast:** **Spinach & Tofu Scramble with Whole Wheat Toast**
+    *   *Description:* Crumbled firm tofu sautéed with spinach, bell peppers, onions, and turmeric, served with one slice of whole wheat toast.
+    *   *Calories:* ~320 kcal
+    *   *Prep Time:* 15 mins
+*   **Lunch:** **Lentil & Vegetable Soup**
+    *   *Description:* Hearty soup made with brown lentils, carrots, celery, spinach, and vegetable broth, seasoned with herbs.
+    *   *Calories:* ~380 kcal
+    *   *Prep Time:* 20 mins (if lentils pre-cooked, 45 mins if cooking from dry)
+*   **Dinner:** **Vegetarian Quinoa Power Bowl**
+    *   *Description:* Cooked quinoa topped with roasted broccoli, chickpeas, cherry tomatoes, cucumber, and a lemon-tahini dressing.
+    *   *Calories:* ~450 kcal
+    *   *Prep Time:* 25 mins
+*   **Snack 1:** Apple slices (1 medium) with 2 tbsp almond butter
+    *   *Calories:* ~250 kcal
+*   **Snack 2:** Handful of walnuts (1/4 cup)
+    *   *Calories:* ~180 kcal
+
+---
+
+### **Day
+
+================================================================================
+DISCLAIMER:
+--------------------------------------------------------------------------------
+This meal plan is for informational purposes only.
+Always consult with a healthcare provider or registered dietitian
+before making significant changes to your diet.
+================================================================================

@@ -1,0 +1,47 @@
+================================================================================
+NUTRIHELP - PERSONALIZED MEAL PLAN
+================================================================================
+Generated: 2025-12-27 17:12:45
+================================================================================
+
+USER PROFILE:
+--------------------------------------------------------------------------------
+Goal                : weight lose
+Sport               : running
+Level               : beginner
+Diet                : veg
+Condition           : no
+Allergies           : no
+
+================================================================================
+MEAL PLAN:
+================================================================================
+
+As an expert nutritionist and meal planner, I'm excited to create a comprehensive, personalized 7-day meal plan to support your weight loss journey as a beginner vegetarian runner!
+
+First, I must address the "AVAILABLE RECIPES" you provided. There are critical issues that prevent me from incorporating them into your plan:
+1.  **Dietary Preference Conflict:** The "Tomato Pesto Chicken Pasta" and "Quinoa Salmon Bowl" recipes are not vegetarian, which contradicts your dietary preference.
+2.  **Calorie & Goal Conflict:** The calorie counts for these recipes (e.g., 2705 cal for pasta, 1300+ cal for salmon bowls) are extremely high for a single meal, especially when your primary goal is weight loss. Even the "Vegetable Curry" lists an impossibly low 6 calories, which suggests an error in the provided data.
+
+Therefore, to ensure your meal plan is truly personalized, vegetarian, and effective for weight loss, I have created a fresh set of balanced, calorie-appropriate vegetarian meals for you.
+
+---
+
+### USER PROFILE SUMMARY:
+*   **Primary Goal:** Weight Loss
+*   **Physical Activity:** Running (Beginner)
+*   **Dietary Preference:** Vegetarian
+*   **Experience Level:** Beginner
+*   **Health Condition/Allergies:** None
+
+---
+
+## 📅 7-DAY
+
+================================================================================
+DISCLAIMER:
+--------------------------------------------------------------------------------
+This meal plan is for informational purposes only.
+Always consult with a healthcare provider or registered dietitian
+before making significant changes to your diet.
+================================================================================

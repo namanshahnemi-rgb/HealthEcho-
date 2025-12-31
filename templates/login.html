@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🔐 AI Face Lock System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #000;
+        color: #0f0;
+        font-family: "Orbitron", sans-serif;
+        text-align: center;
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Animated AI Particles Background */
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, #001100, #000);
+        z-index: 1;
+      }
+
+      .particle {
+        position: absolute;
+        background: #0f0;
+        border-radius: 50%;
+        opacity: 0.6;
+        pointer-events: none;
+        animation: float linear infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.6;
+        }
+        90% {
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(100px);
+          opacity: 0;
+        }
+      }
+
+      /* Content Overlay */
+      .content {
+        position: relative;
+        z-index: 2;
+        background: rgba(0, 20, 0, 0.6);
+        padding: 40px;
+        border-radius: 20px;
+        border: 2px solid #0f0;
+        box-shadow: 0 0 30px #0f0, inset 0 0 20px #0f0;
+        max-width: 90%;
+      }
+
+      h1 {
+        font-size: 3em;
+        text-shadow: 0 0 20px #0f0;
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          text-shadow: 0 0 20px #0f0;
+        }
+        50% {
+          text-shadow: 0 0 40px #0f0, 0 0 60px #0f0;
+        }
+      }
+
+      p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        text-shadow: 0 0 10px #0f0;
+      }
+
+      img#cam {
+        border: 6px solid #0f0;
+        border-radius: 15px;
+        box-shadow: 0 0 40px #0f0;
+        display: none;
+        max-width: 100%;
+        height: auto;
+      }
+
+      input {
+        padding: 15px;
+        margin: 15px;
+        font-size: 1.2em;
+        background: rgba(0, 50, 0, 0.8);
+        border: 2px solid #0f0;
+        color: #0f0;
+        border-radius: 10px;
+        box-shadow: 0 0 15px #0f0;
+        transition: all 0.3s;
+        width: 300px;
+      }
+
+      input:focus {
+        outline: none;
+        box-shadow: 0 0 30px #0f0;
+      }
+
+      button {
+        padding: 15px 30px;
+        margin: 20px;
+        font-size: 1.2em;
+        background: transparent;
+        border: 3px solid #0f0;
+        color: #0f0;
+        cursor: pointer;
+        border-radius: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.5s;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 20px #0f0;
+      }
+
+      button:hover {
+        background: #0f0;
+        color: #000;
+        box-shadow: 0 0 40px #0f0, 0 0 60px #0f0;
+      }
+
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      button:hover::before {
+        left: 100%;
+      }
+
+      h2#status {
+        margin-top: 30px;
+        font-size: 1.5em;
+        text-shadow: 0 0 20px #0f0;
+        min-height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <div class="content">
+      <h1>🔐 AI Face Lock System</h1>
+      <p>
+        Camera opens <b>only after click</b>. Blink <b>2 times</b> to
+        authenticate.
+      </p>
+
+      <img id="cam" width="640" height="480" alt="Camera Feed" />
+
+      <br /><br />
+
+      <input id="username" placeholder="Username (Register only)" />
+
+      <br />
+
+      <button onclick="register()">Register</button>
+      <button onclick="login()">Login</button>
+
+      <h2 id="status"></h2>
+    </div>
+
+    <script>
+      // Generate floating AI particles
+      const particlesContainer = document.getElementById("particles");
+      const particleCount = 80;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+
+        const size = Math.random() * 5 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+
+        const hue = Math.random() * 60 + 90; // Green-cyan tones
+        particle.style.background = `hsl(${hue}, 100%, 50%)`;
+
+        particlesContainer.appendChild(particle);
+      }
+
+      // Existing JS functions (unchanged functionality)
+      async function startCamera() {
+        const cam = document.getElementById("cam");
+        cam.style.display = "block";
+        cam.src = "/video?" + new Date().getTime();
+      }
+
+      async function register() {
+        const username = document.getElementById("username").value;
+        if (!username) {
+          alert("Enter username");
+          return;
+        }
+        document.getElementById("status").innerText =
+          "Registering... Blink twice";
+        await fetch(`/register?username=${username}`, { method: "POST" });
+        startCamera();
+        pollResult();
+      }
+
+      async function login() {
+        document.getElementById("status").innerText =
+          "Logging in... Blink twice";
+        await fetch("/login", { method: "POST" });
+        startCamera();
+        pollResult();
+      }
+
+     
+      function pollResult() {
+        const interval = setInterval(async () => {
+          const res = await fetch("/result");
+          const data = await res.json();
+
+          console.log(data, "<<<<<<<<<<<");
+
+          const result = data.result;
+
+          if (result.status === "success" && result.redirect === true) {
+            clearInterval(interval);
+
+            alert("Authentication Successful!");
+
+            document.getElementById("status").innerText = result.message;
+            document.getElementById("cam").style.display = "none";
+
+            window.location.href = "/main-page";
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
